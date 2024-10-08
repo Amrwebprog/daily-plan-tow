@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily plan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        .centered-image {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.5;
+            max-width: 30%;
+            height: auto;
+            z-index: -1;
+        }
+        .school-name h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: #1e88e5;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .school-name {
+            margin-top: 50px;
+        }
+
+        .school-name h2:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- زر التحويل بين اللغة العربية والإنجليزية -->
+    <div class="container mt-3 text-end">
+        <button id="lang-toggle-btn" class="btn btn-primary">Arabic</button>
+    </div>
+
+    <div class="container mt-5">
+      <div class="school-name d-flex justify-content-center align-items-center text-center">
+        <h2 id="school-name">El Mostakbal Modern Language School</h2>
+      </div>
+        <div class="image-container">
+            <img src="WhatsApp_Image_2024-09-19_at_07.54.16_9ef7e240-removebg-preview.png" alt="Transparent Image" class="centered-image">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8">
+                <!-- Grade Selection -->
+                <div class="mb-3">
+                    <label for="classRoom" class="form-label" id="grade-label">Grade</label>
+                    <select class="form-select" id="classRoom" required>
+                        <option selected disabled id="select-class">Select ClassRoom</option>
+                        <optgroup label="KG 1">
+                          <option value="Moana">Moana</option>
+                          <option value="Trolls">Trolls</option>
+                          <option value="Brave">Brave</option>
+                        </optgroup>
+                        <optgroup label="KG 2">
+                          <option value="peter_pan">Peter pan</option>
+                          <option value="Snowwhite">Snowwhite</option>
+                          <option value="Mowgli">Mowgli</option>
+                          <option value="Crackers">Crackers</option>
+                        </optgroup>
+                        <optgroup label="Primary">
+                            <option value="1a">1a</option>
+                            <option value="1b">1b</option>
+                            <option value="1c">1c</option>
+                            <option value="2a">2a</option>
+                            <option value="2b">2b</option>
+                            <option value="2c">2c</option>
+                            <option value="3a">3a</option>
+                            <option value="3b">3b</option>
+                            <option value="3c">3c</option>
+                            <option value="4a">4a</option>
+                            <option value="4b">4b</option>
+                            <option value="4c">4c</option>
+                            <option value="4d">4d</option>
+                            <option value="5a">5a</option>
+                            <option value="5b">5b</option>
+                            <option value="5c">5c</option>
+                            <option value="6a">6a</option>
+                            <option value="6b">6b</option>
+                        </optgroup>
+                        <optgroup label="Prep">
+                            <option value="prep1a">1a</option>
+                            <option value="prep2a">2a</option>
+                            <option value="prep2b">2b</option>
+                            <option value="prep3">p3</option>
+                        </optgroup>
+                        <optgroup label="High">
+                            <option value="sec1">sec1</option>
+                            <option value="sec2">sec2</option>
+                            <option value="sec3">sec3</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <!-- Date Input (Initially hidden) -->
+                <div class="mb-3 animate__animated" style="display: none;" id="date-container">
+                    <label for="date" class="form-label" id="date-label">Select Date</label>
+                    <input type="date" class="form-control" id="date" placeholder="dd/mm/yyyy" required>
+                </div>
+
+                <!-- Display day (Initially hidden) -->
+                <h1 class="text-center mb-4 animate__animated" id="day-display" style="display: none;">Day</h1>
+
+                <!-- Table (Initially hidden) -->
+                <div class="table-responsive animate__animated" id="table-container" style="display: none;">
+                    <table class="table table-dark table-striped">
+                        <thead>
+                            <tr>
+                                <th id="table-date">Date</th>
+                                <th id="table-subject">Subject</th>
+                                <th id="table-classroom">ClassRoom</th>
+                                <th id="table-homework">Homework</th>
+                                <th id="table-reminder">Reminder</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- You can add rows dynamically here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase App (لجميع الميزات الأساسية لـ Firebase) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+    <!-- Firebase Firestore (Firestore database) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <!-- JavaScript -->
+    <script src="table.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
