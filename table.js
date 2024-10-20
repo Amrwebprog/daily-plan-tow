@@ -110,7 +110,7 @@ document.getElementById('date').addEventListener('change', async function() {
                     case 'jpeg':
                     case 'png':
                     case 'gif':
-                        attachmentDisplay = `<img src="${fileURL}" alt="Image" style="max-width: 100px;"/>`;
+                        attachmentDisplay = `<a href="${fileURL}" target="_blank"><img src="${fileURL}" alt="Image" style="max-width: 100px;"/></a>`;
                         break;
                     case 'pdf':
                         attachmentDisplay = `<a href="${fileURL}" target="_blank">Open PDF</a>`;
